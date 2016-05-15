@@ -30,7 +30,7 @@ set(SOURCE_FILES main.cpp
         handler/jsonrpc2/JsonRpc2ResponseAbstract.h
         service/transport/http/HTTPHeaders.h)
 
-find_package(Boost 1.60.0 COMPONENTS system REQUIRED)
+FIND_PACKAGE(Boost COMPONENTS system REQUIRED)
 
 if (Boost_FOUND)
 
