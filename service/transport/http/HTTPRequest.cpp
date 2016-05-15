@@ -3,6 +3,7 @@
 //
 
 #include "HTTPRequest.h"
+#include <string.h>
 
 int HTTPRequest::onMessageBegin(http_parser *parser) {
     // HTTPRequest *self = (HTTPRequest *) parser->data;

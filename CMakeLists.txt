@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.2)
 project(remotectrl)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -42,8 +42,15 @@ if (Boost_FOUND)
 
 endif ()
 
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED OFF)
+
+FIND_PACKAGE(Threads)
+
 add_executable(remotectrl ${SOURCE_FILES})
 
 if (Boost_FOUND)
     target_link_libraries(remotectrl ${Boost_LIBRARIES})
 endif ()
+
+target_link_libraries(remotectrl ${CMAKE_THREAD_LIBS_INIT})
